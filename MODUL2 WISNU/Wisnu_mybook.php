@@ -10,7 +10,7 @@ $time = $_POST["time"];
 $duration = $_POST["duration"];
 $car_type = $_POST["car_type"];
 $phone_number = $_POST["phone_number"];
-$total_price = 0;
+$car_price = 0;
 
 
 
@@ -29,10 +29,10 @@ if (!isset($_POST["service_health"])) {
 } else {
     $total_price += 25000;
 }
-if (!isset($_POST["service_driver"])) {
+if (isset($_POST["service_driver"])) {
     $_POST["service_driver"] = Null;
 } else {
-    $total_price += 100000;
+    $total_price = 100000;
 }
 if (!isset($_POST["service_fuel"])) {
     $_POST["service_fuel"] = Null;
@@ -41,7 +41,7 @@ if (!isset($_POST["service_fuel"])) {
 }
 
 
-$total_price += $car_price * $duration;
+$total_price = $car_price * $duration;
 
 
 $services_unfiltered = [
@@ -50,7 +50,7 @@ $services_unfiltered = [
     $_POST["service_fuel"]
 ];
 
-$services = array_filter($services_unfiltered);
+$services = filter_var_array($services_unfiltered);
 
 if ($services == Null) {
     $services = ["no service"];
