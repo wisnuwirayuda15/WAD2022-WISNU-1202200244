@@ -1,6 +1,7 @@
 <?php
 if (!isset($_POST["name"])) {
     header("Location: Wisnu_home.php");
+    exit;
 }
 
 
@@ -10,6 +11,7 @@ $time = $_POST["time"];
 $duration = $_POST["duration"];
 $car_type = $_POST["car_type"];
 $phone_number = $_POST["phone_number"];
+$date = date("Y-m-d", strtotime($book_date . "+" . $duration . "days"));
 $total_price = 0;
 
 
@@ -52,9 +54,17 @@ $services_unfiltered = [
 
 $services = array_filter($services_unfiltered);
 
-if ($services == Null) {
-    $services = ["no service"];
-}
+$row = [
+    "Booking Number",
+    "Name",
+    "Check In",
+    "Check Out",
+    "Car Type",
+    "Phone Number",
+    "Service(s)",
+    "Total Price"
+];
+
 ?>
 
 <!doctype html>
@@ -102,28 +112,30 @@ if ($services == Null) {
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Booking Number</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Check In</th>
-                        <th scope="col">Check Out</th>
-                        <th scope="col">Car Type</th>
-                        <th scope="col">Phone Number</th>
-                        <th scope="col">Service(s)</th>
-                        <th scope="col">Total Price</th>
+                        <?php
+                        foreach ($row as $rw) {
+                            echo "<th scope='col'>$rw</th>";
+                        }
+                        ?>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
                     <tr>
-                        <td><?= rand(999999999, 9999999999)  ?></td>
+                        <td><?= rand(1111111111, 9999999999) ?></td>
                         <td><?= $name  ?></td>
                         <td><?= $book_date . " | " . $time  ?></td>
-                        <td><?= date("Y-m-d", strtotime($book_date . "+" . $duration . "days")) . " | " . $time ?></td>
+                        <td><?= $date . " | " . $time ?></td>
                         <td><?= $car_type  ?></td>
                         <td><?= $phone_number  ?></td>
                         <td>
-                            <?php foreach ($services as $svc) : ?>
-                                <li><?= $svc; ?></li>
-                            <?php endforeach ?>
+                            <?php if ($services == Null) {
+                                echo "no services";
+                            } else {
+                                foreach ($services as $svc) {
+                                    echo "<li>$svc</li>";
+                                }
+                            }
+                            ?>
                         </td>
                         <td>Rp <?= number_format($total_price)  ?></td>
                     </tr>

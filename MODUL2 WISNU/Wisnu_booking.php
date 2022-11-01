@@ -62,25 +62,25 @@ if (!isset($_GET["s_mercedes"])) {
                     <div class="container" style="max-width: 600px">
                         <form action="Wisnu_mybook.php" method="POST">
                             <div class="mb-3">
-                                <label class="form-label">Name</label>
-                                <input class="form-control" id="name" type="text" name="name" value="PUTU WISNU WIRAYUDA PUTRA_1202200244" readonly>
+                                <label for="name" class="form-label">Name</label>
+                                <input class="form-control" id="name" type="text" name="name" value="PUTU WISNU WIRAYUDA PUTRA_1202200244" readonly required>
                                 <br>
                                 <div class="mb-3">
-                                    <label class="form-label">Book Date</label>
+                                    <label for="book_date" class="form-label">Book Date</label>
                                     <input type="date" class="form-control" id="book_date" name="book_date" value="" required>
                                 </div>
                                 <br>
                                 <div class="mb-3">
-                                    <label class="form-label">Start Time</label>
+                                    <label for="time" class="form-label">Start Time</label>
                                     <input type="time" class="form-control" id="time" name="time" value="" required>
                                 </div>
                                 <br>
                                 <div class="mb-3">
-                                    <label class="form-label">Duration (Days)</label>
+                                    <label for="duration" class="form-label">Duration (Days)</label>
                                     <input type="number" class="form-control" id="duration" name="duration" value="" required>
                                 </div>
                                 <br>
-                                <label class="form-label">Car Type</label>
+                                <label for="car_type" class="form-label">Car Type</label>
                                 <select id="car_type" name="car_type" class="form-select">
                                     <option value="Mini Cooper" <?= $_GET["s_cooper"] ?>>Mini Cooper</option>
                                     <option value="Lotus Emira" <?= $_GET["s_lotus"] ?>>Lotus Emira</option>
@@ -88,7 +88,7 @@ if (!isset($_GET["s_mercedes"])) {
                                 </select>
                                 <br>
                                 <div class="mb-3">
-                                    <label class="form-label">Phone Number</label>
+                                    <label for="phone_number" class="form-label">Phone Number</label>
                                     <input type="tel" class="form-control" id="phone_number" name="phone_number" value="" required>
                                 </div>
                                 <br>
