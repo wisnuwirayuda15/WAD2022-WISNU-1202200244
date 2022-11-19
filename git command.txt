@@ -1,0 +1,7 @@
+git init
+git config user.name "wisnuwirayuda15"
+git config user.email "wisnuwirayuda15@gmail.com"
+git add *
+git commit -m "First Commit"
+git remote add origin https://github.com/wisnuwirayuda15/WAD2022-WISNU-1202200244.git
+git push -u origin master
