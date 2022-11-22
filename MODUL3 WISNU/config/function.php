@@ -40,7 +40,7 @@ function upload_gambar()
     $nama_foto_baru .= '.';
     $nama_foto_baru .= $extensi_foto;
 
-    move_uploaded_file($lokasi_foto, 'assets/img/upload/'.$nama_foto_baru);
+    move_uploaded_file($lokasi_foto, '../assets/img/upload/'.$nama_foto_baru);
 
     return $nama_foto_baru;
 }

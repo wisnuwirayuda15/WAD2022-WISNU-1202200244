@@ -31,12 +31,22 @@
     </header>
     <main>
         <br><br><br><br>
+        <!-- image modal -->
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="../assets/img/upload/<?= $detail[0]['foto_mobil'] ?>" class="card-img-top sticky-top rounded" alt="gambar mobil">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container justify-content-center">
             <h1 style="font-size: 40px; font-weight: bold"><?= $detail[0]['nama_mobil'] ?></h1>
             <p>Detail mobil <?= $detail[0]['nama_mobil'] ?></p>
             <div class="row">
                 <div class="col-5">
-                    <img src="../assets/img/upload/<?= $detail[0]['foto_mobil'] ?>" class="card-img-top sticky-top rounded" alt="gambar mobil">
+                    <img src="../assets/img/upload/<?= $detail[0]['foto_mobil'] ?>" class="card-img-top sticky-top rounded" alt="gambar mobil" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 </div>
                 <div class="col-7">
                     <form action="../pages/Edit-Wisnu.php" method="POST">

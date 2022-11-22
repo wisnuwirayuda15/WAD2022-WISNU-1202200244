@@ -55,7 +55,6 @@ $list_car = query("SELECT * FROM showroom_wisnu");
             <div class="row row-cols-auto">
                 <?php $x = 0; ?>
                 <?php foreach ($list_car as $card) : ?>
-                    <?php $x++ ?>
                     <div class="col">
                         <div class="card shadow" style="width: 18rem; margin-bottom: 10%">
                             <img src="../assets/img/upload/<?= $card["foto_mobil"] ?>" class="card-img-top" alt="gambar mobil" style="display: block; width: 18rem; height: 18rem; object-fit: cover">
@@ -73,7 +72,7 @@ $list_car = query("SELECT * FROM showroom_wisnu");
     </main>
     <footer>
         <div class="container">
-            <p>Jumlah Mobil: <?=$x?> </p>
+            <p>Jumlah Mobil: <?= mysqli_num_rows(mysqli_query($conn, "SELECT * FROM showroom_wisnu"))?> </p>
         </div>
     </footer>
 
