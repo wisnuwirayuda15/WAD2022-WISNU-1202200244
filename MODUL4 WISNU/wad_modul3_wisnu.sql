@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2022 at 06:28 AM
+-- Generation Time: Nov 26, 2022 at 05:56 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -18,16 +18,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `modul3_wisnu`
+-- Database: `wad_modul3_wisnu`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `showroom_wisnu`
+-- Table structure for table `showroom_wisnu_table`
 --
 
-CREATE TABLE `showroom_wisnu` (
+CREATE TABLE `showroom_wisnu_table` (
   `id_mobil` int(255) NOT NULL,
   `nama_mobil` varchar(255) NOT NULL,
   `pemilik_mobil` varchar(255) NOT NULL,
@@ -43,9 +43,9 @@ CREATE TABLE `showroom_wisnu` (
 --
 
 --
--- Indexes for table `showroom_wisnu`
+-- Indexes for table `showroom_wisnu_table`
 --
-ALTER TABLE `showroom_wisnu`
+ALTER TABLE `showroom_wisnu_table`
   ADD PRIMARY KEY (`id_mobil`);
 
 --
@@ -53,10 +53,10 @@ ALTER TABLE `showroom_wisnu`
 --
 
 --
--- AUTO_INCREMENT for table `showroom_wisnu`
+-- AUTO_INCREMENT for table `showroom_wisnu_table`
 --
-ALTER TABLE `showroom_wisnu`
-  MODIFY `id_mobil` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+ALTER TABLE `showroom_wisnu_table`
+  MODIFY `id_mobil` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

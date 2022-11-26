@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
+<nav class="navbar <?php if(isset($_COOKIE['navcol'])){echo $_COOKIE['navcol'];} else{echo "navbar-dark bg-primary bg-gradient";}?> navbar-expand-lg fixed-top">
     <div class="container">
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">

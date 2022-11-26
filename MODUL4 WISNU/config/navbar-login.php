@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
+<nav class="navbar <?=$_SESSION['navcol']?> navbar-expand-lg fixed-top">
     <div class="container">
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
@@ -13,14 +13,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-auto">
-                            <a href="Add-Wisnu.php" class="btn btn-light text-primary">Add Car</a>
+                            <a href="Add-Wisnu.php" class="btn btn-light">Add Car</a>
                         </div>
                         <div class="col-md-auto">
                             <div class="dropdown">
-                                <a class="btn btn-light dropdown-toggle text-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?=$_SESSION["nama"]?></a>
+                                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?=$_SESSION["nama"]?></a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="http://localhost:8080/praktikum/MODUL4_WISNU/pages/Profile-Wisnu.php">Profile</a></li>
-                                    <li><a class="dropdown-item" href="http://localhost:8080/praktikum/MODUL4_WISNU/config/logout.php" onclick="return confirm('Apakah anda ingin Logout?')">Logout</a></li>
+                                    <li><a class="dropdown-item text-danger" href="http://localhost:8080/praktikum/MODUL4_WISNU/config/logout.php" onclick="return confirm('Apakah anda ingin Logout?')">Logout</a></li>
                                 </ul>
                             </div>
                         </div>

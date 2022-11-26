@@ -20,7 +20,51 @@ if (!isset($_GET["alert"])) {
         <i class="bi bi-info-circle-fill"> Registrasi berhasil, sekarang anda bisa login.</i>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>';
-} 
+}
+
+if (isset($_POST["login"])) {
+    require "../config/connector.php";
+    
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $query = "SELECT * FROM user_wisnu WHERE email = '$email'";
+    $check = mysqli_query($conn_modul4, $query);
+
+    if (mysqli_num_rows($check) == 1) {
+        $row = mysqli_fetch_assoc($check);
+
+        if (password_verify($password, $row["password"])) {
+            $_SESSION["login"] = true;
+            $_SESSION["id"] = $row["id"];
+            $_SESSION["nama"] = $row["nama"];
+            $_SESSION["email"] = $row["email"];
+            $_SESSION["no_hp"] = $row["no_hp"];
+
+            if (isset($_POST['remember'])) {
+                setcookie("id", $row["id"], time() + 3600);
+                setcookie("email", $row["email"], time() + 3600);
+            }
+            
+            if (!isset($_COOKIE['navcol'])){
+                $_SESSION['navcol'] = "navbar-dark bg-primary bg-gradient";
+                setcookie("navcol", $_SESSION['navcol'], time() + 3600);
+            } else {
+                $_SESSION['navcol'] = $_COOKIE['navcol'];
+            }
+
+            return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Home-Wisnu.php");
+        } else {
+            return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Login-Wisnu.php?alert=unverified");
+        }
+    } else {
+        return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Login-Wisnu.php?alert=unverified");
+    }
+    
+    header('Location: http://localhost:8080/praktikum/MODUL4_WISNU/index.php');
+}
+
+
 ?>
 
 <!doctype html>
@@ -54,10 +98,10 @@ if (!isset($_GET["alert"])) {
                     <div class="col-8">
                         <h1 style="font-size: 40px; font-weight: bold">Login</h1>
                         <br>
-                        <form action="../config/login.php" method="POST">
+                        <form action="" method="POST">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" id="email" required>
+                                <input value="<?php if (isset($_COOKIE['email'])) {echo $_COOKIE['email'];}?>" type="email" class="form-control" name="email" id="email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>

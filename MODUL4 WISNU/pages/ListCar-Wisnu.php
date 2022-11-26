@@ -1,16 +1,13 @@
 <?php
 session_start();
 
+require "../config/connector.php";
+require "../config/function.php";
+
 if (!isset($_SESSION['login'])) {
     header('Location: http://localhost:8080/praktikum/MODUL4_WISNU/index.php');
     exit();
 }
-
-$home = '';
-$mycar = 'active';
-
-require "../config/connector.php";
-require "../config/function.php";
 
 $check = mysqli_fetch_assoc(mysqli_query($conn_modul3, "SELECT * FROM showroom_wisnu_table"));
 
@@ -18,6 +15,9 @@ if (!isset($check['id_mobil'])) {
     header("Location: Add-Wisnu.php");
     exit;
 }
+
+$home = '';
+$mycar = 'active';
 
 $list_car = query("SELECT * FROM showroom_wisnu_table");
 ?>

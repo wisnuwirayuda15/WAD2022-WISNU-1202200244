@@ -40,8 +40,6 @@ $mycar = '';
                 <h1 style="font-size: 60px; font-weight: bold">Selamat Datang Di Show Room Wisnu</h1>
               </div>
               <div class="col">
-                <!-- <p><?php var_dump($_COOKIE);
-                    var_dump($_SESSION["remember"]) ?></p> -->
                 <p>Showroom mobil termewah</p>
               </div>
               <div class="col">

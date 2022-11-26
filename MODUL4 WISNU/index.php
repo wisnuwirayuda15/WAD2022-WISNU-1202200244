@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 
 require 'config/connector.php';
@@ -6,7 +6,7 @@ require 'config/connector.php';
 if (isset($_COOKIE['id']) && ($_COOKIE['email'])) {
     $id = $_COOKIE['id'];
     $email = $_COOKIE['email'];
-    // return header("Location: https://www.youtube.com/");
+
     $query = "SELECT * FROM user_wisnu WHERE id = '$id'";
     $check = mysqli_query($conn_modul4, $query);
     $row = mysqli_fetch_assoc($check);

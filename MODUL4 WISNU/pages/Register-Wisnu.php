@@ -72,7 +72,7 @@ if (!isset($_GET["alert"])) {
                             <div class="mb-3">
                                 <label for="no_hp" class="form-label">Phone Number<?= $req ?></label>
                                 <div class="input-group"> <span class="input-group-text" id="basic-addon1">+62</span>
-                                    <input type="telp" class="form-control" name="no_hp" id="no_hp" required>
+                                    <input type="text" class="form-control" name="no_hp" id="no_hp" required>
                                 </div>
                             </div>
                             <div class="mb-3">
