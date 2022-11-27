@@ -10,7 +10,6 @@ if (!isset($_SESSION['login'])) {
 
 $home = 'active';
 $mycar = '';
-
 ?>
 
 <!doctype html>
@@ -38,7 +37,7 @@ $mycar = '';
           <div class="container">
             <div class="row row-cols-1">
               <div class="col">
-                <h1 style="font-size: 60px; font-weight: bold">Selamat Datang Di Show Room <?=$_SESSION['nama']?></h1>
+                <h1 style="font-size: 60px; font-weight: bold">Selamat Datang Di Show Room <?= $_SESSION['nama'] ?></h1>
               </div>
               <div class="col">
                 <p>Showroom mobil termewah</p>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 
 if (isset($_SESSION['login'])) {
@@ -24,7 +24,7 @@ if (!isset($_GET["alert"])) {
 
 if (isset($_POST["login"])) {
     require "../config/connector.php";
-    
+
     $email = $_POST["email"];
     $password = $_POST["password"];
 
@@ -44,9 +44,12 @@ if (isset($_POST["login"])) {
             if (isset($_POST['remember'])) {
                 setcookie("id", $row["id"], time() + 3600);
                 setcookie("email", $row["email"], time() + 3600);
+            } elseif (!isset($_POST['remember'])) {
+                setcookie("id", '', time() - 3600);
+                setcookie("email", '', time() - 3600);
             }
-            
-            if (!isset($_COOKIE['navcol'])){
+
+            if (!isset($_COOKIE['navcol'])) {
                 $_SESSION['navcol'] = "navbar-dark bg-primary bg-gradient";
                 setcookie("navcol", $_SESSION['navcol'], time() + 3600);
             } else {
@@ -60,7 +63,7 @@ if (isset($_POST["login"])) {
     } else {
         return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Login-Wisnu.php?alert=unverified");
     }
-    
+
     header('Location: http://localhost:8080/praktikum/MODUL4_WISNU/index.php');
 }
 
@@ -101,7 +104,9 @@ if (isset($_POST["login"])) {
                         <form action="" method="POST">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input value="<?php if (isset($_COOKIE['email'])) {echo $_COOKIE['email'];}?>" type="email" class="form-control" name="email" id="email" required>
+                                <input value="<?php if (isset($_COOKIE['email'])) {
+                                                    echo $_COOKIE['email'];
+                                                } ?>" type="email" class="form-control" name="email" id="email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
@@ -112,7 +117,7 @@ if (isset($_POST["login"])) {
                                 <label class="form-check-label" for="remember">Remember me</label>
                             </div>
                             <div class="mb-3">
-                                <?=$alert?>
+                                <?= $alert ?>
                             </div>
                             <button class="mb-3 btn btn-primary" type="submit" name="login">Login</button>
                             <p>Anda belum punya akun? <a href="http://localhost:8080/praktikum/MODUL4_WISNU/pages/Register-Wisnu.php">Daftar</a></p>

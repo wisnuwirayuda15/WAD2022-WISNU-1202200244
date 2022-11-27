@@ -23,7 +23,7 @@ if (isset($_POST['edit'])) {
 
     if ($_FILES['foto_mobil']['error'] == 4) {
         $foto_mobil_baru = $foto_mobil_lama;
-    } else { 
+    } else {
         unlink('../assets/img/upload/' . $foto_mobil_lama);
     }
 

@@ -44,4 +44,3 @@ function upload_gambar()
 
     return $nama_foto_baru;
 }
-?>

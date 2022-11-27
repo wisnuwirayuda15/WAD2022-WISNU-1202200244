@@ -55,26 +55,23 @@ if (isset($_POST['update'])) {
     $no_hp = $_POST["no_hp"];
     $navcol = $_POST["navcol"];
     $_SESSION['navcol'] = $navcol;
-    
+
     setcookie("navcol", $_SESSION['navcol'], time() + 3600);
 
-    if ($_POST["password"] == null && $_POST["conf_pass"] == null){ 
+    if ($_POST["password"] == null && $_POST["conf_pass"] == null) {
         $query = "UPDATE `user_wisnu` SET 
         `nama` = '$nama', 
         `email` = '$email',
         `no_hp` = '$no_hp' 
         WHERE `user_wisnu`.`id` = $id";
-
     } elseif (isset($_POST["password"]) || isset($_POST["conf_pass"])) {
         $password = $_POST["password"];
         $conf_pass = $_POST["conf_pass"];
 
-        if (strlen($password) < 8){ 
+        if (strlen($password) < 8) {
             return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Profile-Wisnu.php?alert=pass");
-    
-        } elseif ($password != $conf_pass){ 
+        } elseif ($password != $conf_pass) {
             return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Profile-Wisnu.php?alert=unmatch");
-    
         }
 
         $password = password_hash($password, PASSWORD_DEFAULT);
@@ -86,9 +83,9 @@ if (isset($_POST['update'])) {
         `no_hp` = '$no_hp' 
         WHERE `user_wisnu`.`id` = $id";
     }
-    
+
     mysqli_query($conn_modul4, $query);
-    
+
     if (mysqli_affected_rows($conn_modul4) > 0) {
         echo "
         <script>
@@ -101,8 +98,8 @@ if (isset($_POST['update'])) {
         exit();
     }
 
-// delete acc
-} elseif ((isset($_POST['delete']))) { 
+    // delete acc
+} elseif ((isset($_POST['delete']))) {
     $id = $_POST["id"];
 
     $query = "DELETE FROM user_wisnu WHERE `user_wisnu`.`id` = $id";

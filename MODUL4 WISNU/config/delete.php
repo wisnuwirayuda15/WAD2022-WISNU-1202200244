@@ -29,4 +29,3 @@ if (mysqli_affected_rows($conn_modul3) > 0) {
     </script>";
     exit;
 }
-?>

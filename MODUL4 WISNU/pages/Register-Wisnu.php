@@ -84,7 +84,7 @@ if (!isset($_GET["alert"])) {
                                 <input type="password" class="form-control" name="conf_pass" id="conf_pass" required>
                             </div>
                             <div class="mb-3">
-                                <?=$alert?>
+                                <?= $alert ?>
                             </div>
                             <button class="mb-3 btn btn-primary" type="submit" name="register">Register</button>
                             <p>Anda sudah punya akun? <a href="http://localhost:8080/praktikum/MODUL4_WISNU/pages/Login-Wisnu.php">Login</a></p>
