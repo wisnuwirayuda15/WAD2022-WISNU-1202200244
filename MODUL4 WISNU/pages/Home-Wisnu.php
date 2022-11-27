@@ -3,6 +3,7 @@ session_start();
 
 if (!isset($_SESSION['login'])) {
   $navbar = '../config/navbar-default.php';
+  $_SESSION['nama'] = '';
 } else {
   $navbar = '../config/navbar-login.php';
 }
@@ -37,7 +38,7 @@ $mycar = '';
           <div class="container">
             <div class="row row-cols-1">
               <div class="col">
-                <h1 style="font-size: 60px; font-weight: bold">Selamat Datang Di Show Room Wisnu</h1>
+                <h1 style="font-size: 60px; font-weight: bold">Selamat Datang Di Show Room <?=$_SESSION['nama']?></h1>
               </div>
               <div class="col">
                 <p>Showroom mobil termewah</p>
