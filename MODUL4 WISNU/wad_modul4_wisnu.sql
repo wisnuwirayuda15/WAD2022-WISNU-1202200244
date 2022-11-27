@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2022 at 05:56 PM
+-- Generation Time: Nov 27, 2022 at 07:36 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -43,7 +43,8 @@ CREATE TABLE `user_wisnu` (
 -- Indexes for table `user_wisnu`
 --
 ALTER TABLE `user_wisnu`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -53,7 +54,7 @@ ALTER TABLE `user_wisnu`
 -- AUTO_INCREMENT for table `user_wisnu`
 --
 ALTER TABLE `user_wisnu`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
