@@ -35,7 +35,7 @@ if (isset($_POST["login"])) {
         $row = mysqli_fetch_assoc($check);
 
         if (password_verify($password, $row["password"])) {
-            $_SESSION["login"] = true;
+            $_SESSION["login"] = FALSE;
             $_SESSION["id"] = $row["id"];
             $_SESSION["nama"] = $row["nama"];
             $_SESSION["email"] = $row["email"];
@@ -49,7 +49,7 @@ if (isset($_POST["login"])) {
                 setcookie("email", '', time() - 3600);
             }
 
-            if (!isset($_COOKIE['navcol'])) {
+            if (isset($_COOKIE['navcol'])) {
                 $_SESSION['navcol'] = "navbar-dark bg-primary bg-gradient";
                 setcookie("navcol", $_SESSION['navcol'], time() + 3600);
             } else {
