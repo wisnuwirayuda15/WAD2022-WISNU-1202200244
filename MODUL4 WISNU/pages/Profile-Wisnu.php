@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['login'])) {
-    header('Location: http://localhost:8080/praktikum/MODUL4_WISNU/index.php');
+    header('Location: ../index.php');
     exit();
 }
 
@@ -69,9 +69,9 @@ if (isset($_POST['update'])) {
         $conf_pass = $_POST["conf_pass"];
 
         if (strlen($password) < 8) {
-            return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Profile-Wisnu.php?alert=pass");
+            return header("Location: ../pages/Profile-Wisnu.php?alert=pass");
         } elseif ($password != $conf_pass) {
-            return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Profile-Wisnu.php?alert=unmatch");
+            return header("Location: ../pages/Profile-Wisnu.php?alert=unmatch");
         }
 
         $password = password_hash($password, PASSWORD_DEFAULT);
@@ -90,11 +90,11 @@ if (isset($_POST['update'])) {
         echo "
         <script>
             alert('Data berhasil diupdate!')
-            document.location.href = 'http://localhost:8080/praktikum/MODUL4_WISNU/config/logout.php'
+            document.location.href = '../config/logout.php'
         </script>";
         exit();
     } else {
-        header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/Pages/Profile-Wisnu.php?alert=noupdate");
+        header("Location: ../Pages/Profile-Wisnu.php?alert=noupdate");
         exit();
     }
 
@@ -110,11 +110,11 @@ if (isset($_POST['update'])) {
         echo "
         <script>
             alert('Akun anda berhasil dihapus!')
-            document.location.href = 'http://localhost:8080/praktikum/MODUL4_WISNU/config/logout.php'
+            document.location.href = '../config/logout.php'
         </script>";
         exit();
     } else {
-        header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/Pages/Profile-Wisnu.php?alert=delfailed");
+        header("Location: ../Pages/Profile-Wisnu.php?alert=delfailed");
         exit();
     }
 }

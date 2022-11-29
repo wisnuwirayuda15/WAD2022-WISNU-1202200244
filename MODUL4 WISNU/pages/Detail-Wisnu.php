@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['login'])) {
-    header('Location: http://localhost:8080/praktikum/MODUL4_WISNU/index.php');
+    header('Location: ../index.php');
     exit();
 }
 
@@ -45,7 +45,13 @@ $mycar = 'active';
             <p>Detail mobil <?= $detail[0]['nama_mobil'] ?></p>
             <div class="row">
                 <div class="col-5">
-                    <img src="../assets/img/upload/<?= $detail[0]['foto_mobil'] ?>" class="card-img-top sticky-top rounded" alt="gambar mobil" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img
+                    src="../assets/img/upload/<?= $detail[0]['foto_mobil'] ?>"
+                    class="card-img-top sticky-top rounded"
+                    alt="gambar mobil"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    style=" aspect-ratio: 4 / 3; object-fit: cover">
                 </div>
                 <div class="col-7">
                     <form action="../pages/Edit-Wisnu.php" method="POST">

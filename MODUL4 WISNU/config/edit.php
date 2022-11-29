@@ -1,6 +1,6 @@
 <?php
 if (!isset($_GET["id_mobil"])) {
-    header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/ListCar-Wisnu.php");
+    header("Location: ../pages/ListCar-Wisnu.php");
     exit;
 }
 
@@ -44,14 +44,14 @@ if (isset($_POST['edit'])) {
         echo "
         <script>
             alert('Data berhasil diupdate!')
-            document.location.href = 'http://localhost:8080/praktikum/MODUL4_WISNU/pages/ListCar-Wisnu.php'
+            document.location.href = '../pages/ListCar-Wisnu.php'
         </script>";
         exit;
     } else {
         echo "
         <script>
             alert('Anda tidak merubah data apapun!')
-            document.location.href = 'http://localhost:8080/praktikum/MODUL4_WISNU/pages/ListCar-Wisnu.php'
+            document.location.href = '../pages/ListCar-Wisnu.php'
         </script>";
         exit;
     }

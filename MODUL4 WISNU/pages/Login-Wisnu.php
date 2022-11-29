@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['login'])) {
-    header('Location: http://localhost:8080/praktikum/MODUL4_WISNU/index.php');
+    header('Location: ../index.php');
     exit();
 }
 
@@ -56,15 +56,15 @@ if (isset($_POST["login"])) {
                 $_SESSION['navcol'] = $_COOKIE['navcol'];
             }
 
-            return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Home-Wisnu.php");
+            return header("Location: ../pages/Home-Wisnu.php");
         } else {
-            return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Login-Wisnu.php?alert=unverified");
+            return header("Location: ../pages/Login-Wisnu.php?alert=unverified");
         }
     } else {
-        return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Login-Wisnu.php?alert=unverified");
+        return header("Location: ../pages/Login-Wisnu.php?alert=unverified");
     }
 
-    header('Location: http://localhost:8080/praktikum/MODUL4_WISNU/index.php');
+    header('Location: ../index.php');
 }
 
 
@@ -120,8 +120,8 @@ if (isset($_POST["login"])) {
                                 <?= $alert ?>
                             </div>
                             <button class="mb-3 btn btn-primary" type="submit" name="login">Login</button>
-                            <p>Anda belum punya akun? <a href="http://localhost:8080/praktikum/MODUL4_WISNU/pages/Register-Wisnu.php">Daftar</a></p>
-                            <p>Kembali ke <a href="http://localhost:8080/praktikum/MODUL4_WISNU/pages/Home-Wisnu.php">Beranda</a></p>
+                            <p>Anda belum punya akun? <a href="../pages/Register-Wisnu.php">Daftar</a></p>
+                            <p>Kembali ke <a href="../pages/Home-Wisnu.php">Beranda</a></p>
                         </form>
                     </div>
                 </div>

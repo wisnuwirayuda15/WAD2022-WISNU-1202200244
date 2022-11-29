@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['login'])) {
-    header('Location: http://localhost:8080/praktikum/MODUL4_WISNU/index.php');
+    header('Location: ../index.php');
     exit();
 }
 

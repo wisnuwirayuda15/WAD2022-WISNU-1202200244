@@ -14,11 +14,11 @@ if (isset($_POST["register"])) {
     $check = mysqli_query($conn_modul4, $query);
 
     if (strlen($password) < 8) {
-        return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Register-Wisnu.php?alert=pass");
+        return header("Location: ../pages/Register-Wisnu.php?alert=pass");
     } elseif ($password != $conf_pass) {
-        return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Register-Wisnu.php?alert=unmatch");
+        return header("Location: ../pages/Register-Wisnu.php?alert=unmatch");
     } elseif (mysqli_fetch_assoc($check)) {
-        return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Register-Wisnu.php?alert=email");
+        return header("Location: ../pages/Register-Wisnu.php?alert=email");
     }
 
     $password = password_hash($password, PASSWORD_DEFAULT);
@@ -27,7 +27,7 @@ if (isset($_POST["register"])) {
 
     mysqli_query($conn_modul4, $query);
 
-    return header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Login-Wisnu.php?alert=success");
+    return header("Location: ../pages/Login-Wisnu.php?alert=success");
 }
 
-header('Location: http://localhost:8080/praktikum/MODUL4_WISNU/index.php');
+header('Location: ../index.php');

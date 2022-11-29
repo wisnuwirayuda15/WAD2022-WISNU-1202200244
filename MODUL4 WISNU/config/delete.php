@@ -1,6 +1,6 @@
 <?php 
 if (!isset($_GET["id_mobil"])) {
-    header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/ListCar-Wisnu.php");
+    header("Location: ../pages/ListCar-Wisnu.php");
     exit;
 }
 
@@ -18,14 +18,14 @@ if (mysqli_affected_rows($conn_modul3) > 0) {
     echo "
     <script>
         alert('Data berhasil dihapus!')
-        document.location.href = 'http://localhost:8080/praktikum/MODUL4_WISNU/pages/ListCar-Wisnu.php'
+        document.location.href = '../pages/ListCar-Wisnu.php'
     </script>";
     exit;
 } else {
     echo "
     <script>
         alert('Data tidak dapat dihapus!')
-        document.location.href = 'http://localhost:8080/praktikum/MODUL4_WISNU/pages/ListCar-Wisnu.php'
+        document.location.href = '../pages/ListCar-Wisnu.php'
     </script>";
     exit;
 }

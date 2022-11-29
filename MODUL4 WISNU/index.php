@@ -19,4 +19,4 @@ if (isset($_COOKIE['id']) && ($_COOKIE['email'])) {
     }
 }
 
-header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/pages/Home-Wisnu.php");
+header("Location: pages/Home-Wisnu.php");

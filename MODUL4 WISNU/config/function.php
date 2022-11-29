@@ -32,7 +32,7 @@ function upload_gambar()
         <script>
             alert('File yang diupload tidak didukung!')
         </script>";
-        header("Location: http://localhost:8080/praktikum/MODUL4_WISNU/index.php");
+        header("Location: ../index.php");
         exit;
     }
 

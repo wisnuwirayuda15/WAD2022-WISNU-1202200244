@@ -1,6 +1,6 @@
 <?php
 if (isset($_SESSION['login'])) {
-    header('Location: http://localhost:8080/praktikum/MODUL4_WISNU/index.php');
+    header('Location: ../index.php');
     exit();
 }
 
@@ -87,8 +87,8 @@ if (!isset($_GET["alert"])) {
                                 <?= $alert ?>
                             </div>
                             <button class="mb-3 btn btn-primary" type="submit" name="register">Register</button>
-                            <p>Anda sudah punya akun? <a href="http://localhost:8080/praktikum/MODUL4_WISNU/pages/Login-Wisnu.php">Login</a></p>
-                            <p>Kembali ke <a href="http://localhost:8080/praktikum/MODUL4_WISNU/pages/Home-Wisnu.php">Beranda</a></p>
+                            <p>Anda sudah punya akun? <a href="../pages/Login-Wisnu.php">Login</a></p>
+                            <p>Kembali ke <a href="../pages/Home-Wisnu.php">Beranda</a></p>
                         </form>
                     </div>
                 </div>
