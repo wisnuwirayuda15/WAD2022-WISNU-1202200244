@@ -3,7 +3,7 @@ session_start();
 
 require "connector.php";
 
-if (isset($_POST["daftar"])) {
+if (isset($_POST["register"])) {
     $email = $_POST["email"];
     $nama = $_POST["nama"];
     $no_hp = $_POST["no_hp"];
