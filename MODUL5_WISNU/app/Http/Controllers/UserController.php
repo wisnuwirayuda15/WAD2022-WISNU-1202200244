@@ -39,18 +39,14 @@ class UserController extends Controller
 
     public function authUser(Request $request)
     {
-        $credentials = $request->validate(
-            [
-                'email' => '',
-                'password' => '',
-            ],
+        $remember = ($request->remember == 'on' ? true : false);
 
-            $messages = array(
-                'email.email' => 'Masukan email yang benar.',
-            )
-        );
+        $credentials = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
             return redirect()->intended('/')
                 ->with('toast', 'Selamat datang, ' . auth()->user()->name . '!')
