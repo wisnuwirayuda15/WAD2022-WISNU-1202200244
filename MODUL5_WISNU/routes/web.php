@@ -57,7 +57,7 @@ Route::post('/register', [UserController::class, 'addUser']);
 
 
 //Logout route
-Route::get('/logout', [UserController::class, 'logout']);
+Route::get('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 
 //Profile route

@@ -20,15 +20,10 @@
                     <form action="/login" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="email" class="form-label @error('email') is-invalid @enderror">Email<span
+                            <label for="email" class="form-label">Email<span
                                     class='text-danger'>*</span></label>
                             <input value="{{ old('email') }}" type="email" class="form-control" name="email"
                                 id="email" required autofocus>
-                            @error('email')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password<span class='text-danger'>*</span></label>

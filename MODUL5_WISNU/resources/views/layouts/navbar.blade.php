@@ -38,10 +38,6 @@
                                                     onclick="return confirm('Apakah anda ingin Logout?')"><i class="bi bi-arrow-bar-left"></i> Logout</button>
                                             </form>
                                         </li>
-                                        {{-- <li>
-                                            <button class="dropdown-item text-warning" onclick="showToast()"><i class="bi bi-chat-right-dots-fill"></i></i>
-                                                show toast</button>
-                                        </li> --}}
                                     </ul>
                                 </div>
                             </div>

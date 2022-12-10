@@ -13,7 +13,7 @@
                         <img src="/img/uploaded/{{ $list->image }}" class="card-img-top" alt="gambar mobil"
                             style="display: block; width: 18rem; height: 18rem; object-fit: cover">
                         <div class="card-body">
-                            <h4 class="card-title" style="font-weight: bold">{{ $list->name }}</h4>
+                            <h4 class="card-title" style="font-weight: bold">{{ mb_strimwidth($list->name, 0, 18, '...') }}</h4>
                             <p class="card-text">{{ mb_strimwidth($list->description, 0, 40, '...') }}</p>
                             <div class="d-flex justify-content-around position-absolute" style="bottom: 1.5rem; right: 0; left: 0">
                                 <form action="/showroom/{{ $list->id }}" method="GET" class="d-flex">

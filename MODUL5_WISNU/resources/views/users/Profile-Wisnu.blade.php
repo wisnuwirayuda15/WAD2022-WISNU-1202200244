@@ -59,7 +59,7 @@
             @method('DELETE')
             @csrf
             <button class="ms-4 btn btn-danger" name="delete"
-                onclick="return confirm('Apakah anda yakin ingin menghapus {{ auth()->user()->id }}? Anda tidak dapat mengembalikan akun anda setelah anda memilih OK')"><i
+                onclick="return confirm('Apakah anda yakin ingin menghapus akun {{ auth()->user()->name }}? Anda tidak dapat mengembalikan akun anda setelah anda memilih OK.')"><i
                     class="bi bi-person-x-fill"></i> Delete
                 Account</button>
         </form>
