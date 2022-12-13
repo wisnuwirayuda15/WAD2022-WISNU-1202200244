@@ -37,7 +37,7 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
     }
@@ -109,7 +109,7 @@ class ProfileController extends Controller
      */
     public function destroy($user_id)
     {
-        User::find($user_id)->delete();
+        User::find()->delete();
 
         //Hapus semua showroom mobil untuk akun ini
         Showroom::where('user_id', $user_id)->delete();
