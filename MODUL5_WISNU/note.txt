@@ -1,2 +1,8 @@
 TP
 - bagus
+
+Debuging
+- nemu 2 
+
+Audit 
+- 3 pertanyaan bagus
